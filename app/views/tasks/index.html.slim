@@ -1,2 +1,20 @@
-h1 Tasks#index
-p Find me in app/views/tasks/index.html.slim
+h1 タスク一覧
+
+.nav.justify-content-end
+  = link_to 'タスク一覧', tasks_path, class: 'nav-link'
+
+= link_to '新規登録', new_task_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= Task.human_attribute_name(:id)
+      th= Task.human_attribute_name(:name)
+      th= Task.human_attribute_name(:created_at)
+  tbody
+    - @tasks.map do |task|
+      tr
+        th= task.id
+        th= link_to task.name, task
+        th= task.created_at
