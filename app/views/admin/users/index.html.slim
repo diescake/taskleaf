@@ -1,12 +1,13 @@
 h1 ユーザー一覧
 
-.mb-3
-  = link_to '新規登録', new_admin_user_path, class: 'btn btn-primary'
+.mb-5
+  = link_to 'ユーザーを登録する', new_admin_user_path, class: 'btn btn-primary'
 
 .mb-3
   table.table.table-hover
     thead.thead-default
       tr
+        th= User.human_attribute_name(:id)
         th= User.human_attribute_name(:name)
         th= User.human_attribute_name(:email)
         th= User.human_attribute_name(:admin)
@@ -16,6 +17,7 @@ h1 ユーザー一覧
     tbody
       - @users.each do |user|
         tr
+          td= user.id
           td= link_to user.name, [:admin, user]
           td= user.email
           td= user.admin? ? 'あり' : 'なし'

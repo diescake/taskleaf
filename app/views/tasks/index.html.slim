@@ -1,22 +1,24 @@
 h1 タスク一覧
 
-= link_to '新規登録', new_task_path, class: 'btn btn-primary'
+.mb-5
+  = link_to 'タスクを登録する', new_task_path, class: 'btn btn-primary'
 
 .mb-3
-table.table.table-hover
-  thead.thead-default
-    tr
-      th= Task.human_attribute_name(:id)
-      th= Task.human_attribute_name(:name)
-      th= Task.human_attribute_name(:created_at)
-      th
-      th
-  tbody
-    - @tasks.map do |task|
+  table.table.table-hover
+    thead.thead-default
       tr
-        td= task.id
-        td= link_to task.name, task
-        td= task.created_at
-        td
-          =link_to '編集', edit_task_path(task), class: 'btn btn-secondary mr-3'
-          =link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.name}」を削除します。よろしいですか？}" }, class: 'btn btn-danger'
+        th= Task.human_attribute_name(:id)
+        th= Task.human_attribute_name(:name)
+        th= Task.human_attribute_name(:created_at)
+        th= Task.human_attribute_name(:updated_at)
+        th
+    tbody
+      - @tasks.map do |task|
+        tr
+          td= task.id
+          td= link_to task.name, task
+          td= task.created_at
+          td= task.updated_at
+          td
+            =link_to '編集', edit_task_path(task), class: 'btn btn-secondary mr-3'
+            =link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.name}」を削除します。よろしいですか？}" }, class: 'btn btn-danger'

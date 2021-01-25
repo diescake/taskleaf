@@ -8,10 +8,17 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    a href="/"
-      .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-        .navbar-brand
-          | Taskleaf
+    .app-title.navbar.navbar-expand-md.navbar-light.bg-light
+      .mr-3
+        a href="/"
+          .navbar-brand
+            | Taskleaf
+      .mr-3
+        a href="#{tasks_path}"
+          | タスク一覧
+      .mr-3
+        a href="#{admin_users_path}"
+          | 管理画面
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice
