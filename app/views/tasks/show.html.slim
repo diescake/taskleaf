@@ -8,7 +8,7 @@ table.table.table-hover
     - [:id, :name, :description, :created_at, :updated_at].each do |s|
       tr
         th= Task.human_attribute_name(s)
-        td= @task[s]
+        td= auto_link(simple_format(h(@task[s]), {}, sanitize: false, wrapper_tag: "div"))
 
 = link_to '編集', edit_task_path, class: 'btn btn-secondary mr-3'
 = link_to '削除', @task, method: :delete, data: { confirm: "タスク「#{@task.name}」を削除します。よろしいですか？}" }, class: 'btn btn-danger'
