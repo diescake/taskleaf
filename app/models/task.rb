@@ -8,4 +8,6 @@ class Task < ApplicationRecord
   def validate_name_not_including_atto_mark
     errors.add(:name, 'に＠を含めることはできません。') if name&.include?('@')
   end
+
+  belongs_to :user
 end
