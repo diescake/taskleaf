@@ -1,5 +1,7 @@
 # taskleaf
 
+Toy todo tools to learn Rails. My textbook is [現場で使える Ruby on Rails 5速習実践ガイド](https://www.amazon.co.jp/dp/4839962227) a.k.a. `現場 Rails`.
+
 ## Environment
 
 - ruby 2.7.2p137
@@ -38,5 +40,5 @@ $ brew services stop postgresql@10
 ## Debug
 
 ```shell
-$ psql postgres
+$ psql taskleaf_development
 ```
