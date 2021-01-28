@@ -66,3 +66,5 @@ gem 'html2slim'
 gem 'bootstrap'
 
 gem 'rails_autolink'
+
+gem 'rspec-rails', '~> 3.7'
