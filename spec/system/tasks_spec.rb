@@ -77,4 +77,32 @@ describe 'タスク管理機能' do
       end
     end
   end
+
+  describe '新規作成機能' do
+    let(:login_user) { user_a }
+
+    before do
+      visit new_task_path
+      fill_in '名称', with: task_name
+      click_button '登録する'
+    end
+
+    context '新規作成画面で名称を入力したとき' do
+      let(:task_name) { 'いっぱい眠る' }
+
+      it '登録に成功する' do
+        expect(page).to have_selector '.alert-success', text: 'タスク「いっぱい眠る」を登録しました。'
+      end
+    end
+
+    context '新規作成画面で名称を入力していないとき' do
+      let(:task_name) { '' }
+
+      it '登録に失敗する' do
+        within '#error_explanation' do
+          expect(page).to have_content '名称を入力してください'
+        end
+      end
+    end
+  end
 end
