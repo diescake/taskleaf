@@ -82,4 +82,5 @@ production:
   <<: *default
   database: taskleaf_production
   username: taskleaf
-  password: <%= ENV['TASKLEAF_DATABASE_PASSWORD'] %>
+  # password: <%#= ENV['TASKLEAF_DATABASE_PASSWORD'] %>
+  password: hogefoobar # NOTE: Just for local. Do NOT deploy this application.
