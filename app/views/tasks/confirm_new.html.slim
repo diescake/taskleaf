@@ -1,0 +1,15 @@
+h1 登録内容の確認
+
+.nav.justify-content-end
+  = link_to 'タスク一覧', tasks_path, class: 'nav-link'
+
+= form_with model: @task, local: true do |f|
+  table.table.table-hover
+    tbody
+      - [:name, :description].each do |s|
+        tr
+          th= Task.human_attribute_name(s)
+          td= auto_link(simple_format(h(@task[s]), {}, sanitize: false, wrapper_tag: "div"))
+          = f.hidden_field s
+  = f.submit '戻る', name: 'back', class: 'btn btn-secondary mr-3'
+  = f.submit '登録', class: 'btn btn-primary'
