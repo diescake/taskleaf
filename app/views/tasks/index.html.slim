@@ -20,8 +20,8 @@ h1 タスク一覧
     thead.thead-default
       tr
         th= Task.human_attribute_name(:id)
-        th= Task.human_attribute_name(:name)
-        th= Task.human_attribute_name(:created_at)
+        th= sort_link(@q, :name, [:name, default_order: :desc])
+        th= sort_link(@q, :created_at)
         th= Task.human_attribute_name(:updated_at)
         th
     tbody
