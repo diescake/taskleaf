@@ -34,3 +34,6 @@ h1 タスク一覧
           td
             =link_to '編集', edit_task_path(task), class: 'btn btn-secondary mr-3'
             =link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+
+.mb-5
+  = link_to 'エクスポート', tasks_path(format: :csv), class: 'btn btn-primary mb-3'
