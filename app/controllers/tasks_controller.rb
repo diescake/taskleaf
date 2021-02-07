@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
 
   def index
-    @q = current_user.tasks.ransack(params[:q])
+    @q = current_user.tasks.order(id: 'ASC').ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page])
 
     respond_to do |format|
