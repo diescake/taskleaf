@@ -8,7 +8,8 @@ h1 タスク一覧
   .form-group.row
     = f.label :name_cont, '登録日時', class: 'col-sm-2 col-form-label'
     .col-sm-10
-      = f.search_field :created_at_gteq, class: 'form-control'
+      = f.date_field :created_at_gteq, class: 'form-control'
+      = f.date_field :created_at_lteq, class: 'form-control'
   .form-group
     = f.submit class: 'btn btn-outline-primary'
 
@@ -39,5 +40,5 @@ h1 タスク一覧
   = link_to 'エクスポート', tasks_path(format: :csv), class: 'btn btn-primary mb-3'
 
 = form_tag import_tasks_path, multipart: true, class: 'mb-3' do
+  = submit_tag 'インポート', class: 'btn btn-primary mr-3'
   = file_field_tag :file
-  = submit_tag 'インポート', class: 'btn btn-primary'
