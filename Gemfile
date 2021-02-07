@@ -70,5 +70,6 @@ gem 'rails_autolink'
 gem 'factory_bot_rails', '~> 4.11'
 gem 'rspec-rails', '~> 3.7'
 
-gem 'rubocop', require: false
+gem 'kaminari'
 gem 'ransack'
+gem 'rubocop', require: false
