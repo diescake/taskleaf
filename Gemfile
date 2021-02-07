@@ -73,3 +73,5 @@ gem 'rspec-rails', '~> 3.7'
 gem 'kaminari'
 gem 'ransack'
 gem 'rubocop', require: false
+
+gem 'sidekiq'
