@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   def index
     @q = current_user.tasks.ransack(params[:q])
@@ -11,8 +11,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @task = Task.new
@@ -23,8 +22,7 @@ class TasksController < ApplicationController
     render :new unless @task.valid?
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @task.update!(task_params)
@@ -60,6 +58,10 @@ class TasksController < ApplicationController
   private
 
   # Only allow a list of trusted parameters through.
+  def tasks_params
+    params.permit(:q, :description, :image)
+  end
+
   def task_params
     params.require(:task).permit(:name, :description, :image)
   end
