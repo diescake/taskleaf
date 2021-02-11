@@ -75,3 +75,5 @@ gem 'ransack'
 gem 'rubocop', require: false
 
 gem 'sidekiq'
+
+gem 'webpacker'
