@@ -15,6 +15,4 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-window.addEventListener('load', () => {
-  console.log('onload finished')
-})
+import 'taskleaf/hello.js'
