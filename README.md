@@ -26,7 +26,7 @@ $ brew services start postgresql@10
 
 ```shell
 # $ bundle exec rails s
-$ bin/rails -s
+$ bin/rails s
 ```
 
 3. Open `http://localhost:3000` on your browser.
