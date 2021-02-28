@@ -19,7 +19,7 @@ $ bundle install
 1. Launch the database server.
 
 ```shell
-$ brew services start postgresql@10
+$ docker-compose up
 ```
 
 2. Launch the rails server.
@@ -31,14 +31,11 @@ $ bin/rails s
 
 3. Open `http://localhost:3000` on your browser.
 
-## Stop
-
-```shell
-$ brew services stop postgresql@10
-```
-
 ## Debug
 
 ```shell
-$ psql taskleaf_development
+$ bin/rails db
 ```
+
+- ID: root
+- Password: root
